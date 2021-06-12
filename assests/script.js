@@ -43,10 +43,14 @@ $(document).ready(function() {
         div.append(body);
         $('#current').append(div);
 
-        Forcast(input);
+        Forecast(input);
         UVIndex(data.coord.lat, data.coord.lon);
       }
-    })
+    });
+  }
+
+  function Forecast(input) {
+    $.ajax
   }
 });
 
