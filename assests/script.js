@@ -9,12 +9,12 @@ $(document).ready(function() {
     Weather(Value);
   });
 
-  $(".prevCity").on("click", "li", function() {
+  $(".prevCity").on("click", "list", function() {
     Weather($(this).text());
   });
 
   function createB(text) {
-    var li = $("<li>").addClass("list-group-item list-group-item-action").text(text);
+    var list = $("<li>").addClass("list-group-item list-group-item-action").text(text);
     $(".prevCity").append(list);
   }
 
@@ -64,7 +64,7 @@ $(document).ready(function() {
       dataType: "json",
       success: function(data) {
         // overwrite any existing content with title and empty row
-        $("#forecast").html("<h4 class=\"mt-3\">5-Day Forecast:</h4>").append("<div class=\"row\">");
+        $("#cast").html("<h4 class=\"mt-3\">5-Day Forecast:</h4>").append("<div class=\"row\">");
 
         // loop over all forecasts (by 3-hour increments)
         for (var i = 0; i < data.list.length; i++) {
@@ -84,7 +84,7 @@ $(document).ready(function() {
 
             // merge together and put on page
             col.append(div.append(dBody.append(name, icon, para1, para2)));
-            $("#forecast .row").append(col);
+            $("#cast .row").append(col);
           }
         }
       }
